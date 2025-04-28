@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-lg-8">
+        <h1>Manage To Do Lists</h1>
+    </div>
+    <div class="col-lg-4">
+        <a class="btn btn-primary" href="/admin/list/create">Add New List</a>
+    </div>
+</div>
+
+<table class="table table-bordered custom-table">
+  <thead class="table">
+    <tr>
+      <th>ID</th>
+      <th>List Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each lists}}
+    <tr>
+      <td>{{this.dataValues.id}}</td>
+      <td>{{this.dataValues.listName}}</td>
+      <td>{{this.dataValues.listDesc}}</td>
+      <td>
+        <a class="btn btn-sm btn-secondary" href="/list/{{this.dataValues.id}}">View Tasks</a>
+        <a class="btn btn-sm btn-secondary" href="admin/list/edit/{{this.dataValues.id}}">Edit</a>
+        <a class="btn btn-sm btn-danger" href="/admin/list/delete/{{this.dataValues.id}}">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+{{!-- <div class="container mt-5">
+  <div class="row">
+    <div class="col text-center">
+      <h1>Manage To Do Lists</h1>
+      <p class="text-muted">Manage lists, tasks, and more.</p>
+    </div>
+  </div> 
+
+  <div class="row">
+    <div class="col-lg-8">
+        <h1>Manage To Do Lists</h1>
+    </div>
+    <div class="col-lg-4">
+        <a class="btn btn-primary" href="/admin/list/create">Add New List</a>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <table class="table table-bordered">
+        <thead class="table">
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col">id</div>
+                    <div class="col">List Name</div>
+                    <div class="col">Description</div>
+                    <div class="col">Actions</div>
+            </td>
+        </tr>
+        </thead>
+        <tbody></tbody>
+        {{#each lists}}
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="col">
+                        {{this.dataValues.id}}
+                    </div>
+                    <div class="col">
+                        {{this.dataValues.listName}} 
+                    </div>
+                    <div class="col">
+                        {{this.dataValues.listDesc}}
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-sm btn-secondary" href="/list/{{this.dataValues.id}}">View Tasks</a>
+                        <a class="btn btn-sm btn-secondary" href="admin/list/edit/{{this.dataValues.id}}">Edit</a>
+                        <a class="btn btn-sm btn-danger" href="/admin/list/delete/{{this.dataValues.id}}">Delete</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+</tbody>
+    </table>
+</div> --}}

@@ -1,0 +1,28 @@
+<form method="post" action="/admin/item/create" enctype="application/x-www-form-urlencoded">
+<input type="text" value="{{lists.id}}" name="lid">
+
+
+    <div class="mb-3">
+      <label for="item" class="form-label">Task Title</label>
+        <input
+        name="item"
+        type="text"
+        class="form-control"
+        id="item" 
+        {{#if task.dataValues.title}} value ="{{task.dataValues.title}} {{/if}}">
+     </div>
+
+
+    <div class="mb-3">
+      <label for="dueDate" class="form-label">Due Date</label>
+      <input
+        type="date"
+        class="form-control"
+        id="dueDate"
+        name="dueDate"
+         {{#if task.dataValues.dueDate}} value ="{{task.dataValues.dueDate}} {{/if}}">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

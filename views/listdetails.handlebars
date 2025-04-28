@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-lg-8">
+    <h1>{{list.dataValues.listName}}</h1>
+    <p class="text-muted">{{list.dataValues.listDesc}}</p>
+  </div>
+  <div class="col-lg-4 text-end">
+    <a class="btn btn-primary" href="/admin/item/create/{{list.dataValues.id}}">Add Task</a>
+    <a class="btn btn-secondary" href="/lists">Back to Lists</a>
+  </div>
+</div>
+
+<hr>
+
+
+  <table class="table table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th></th>
+        <th>Task Title</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tasks}}
+      <tr>
+        <td>
+            <form action="/admin/item/complete/{{this.dataValues.id}}" method="POST">
+                <input type="checkbox" name="completed" 
+                    onchange="this.form.submit()" 
+                    {{#if this.dataValues.completed}}checked{{/if}}>
+                </form>
+        </td>
+        <td>{{this.dataValues.item}}</td>
+        
+        {{!-- TRY TO IMPLEMENT LATER FOR STATUS UPDATES
+        <td>
+           <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio-{{this.dataValues.id}}" id="pending-{{this.dataValues.id}}" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="pending-{{this.dataValues.id}}">Pending</label>
+
+            <input type="radio" class="btn-check" name="btnradio-{{this.dataValues.id}}" id="inprogress-{{this.dataValues.id}}" autocomplete="off">
+            <label class="btn btn-outline-primary" for="inprogress-{{this.dataValues.id}}">In Progress</label>
+
+            <input type="radio" class="btn-check" name="btnradio-{{this.dataValues.id}}" id="completed-{{this.dataValues.id}}" autocomplete="off">
+            <label class="btn btn-outline-primary" for="completed-{{this.dataValues.id}}">Completed</label>
+            </div>      
+        </td> --}}
+
+        <td>{{this.displayDueDate}}</td>
+        <td>
+          {{#if this.dataValues.completed}}
+            <span class="badge bg-success">Completed</span>
+          {{else}}
+            <span class="badge bg-warning text-dark">Pending</span>
+          {{/if}}
+        </td>
+        <td>
+          <a class="btn btn-sm btn-danger" href="/admin/item/delete/{{this.dataValues.id}}">Delete</a>
+
+        
+
+
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>

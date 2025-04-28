@@ -1,0 +1,15 @@
+<h1>Add New List</h1>
+{{!-- Customer Form --}}
+<form method="post" action="/admin/list/{{#if lists.id}}edit{{else}}create{{/if}}" enctype="application/x-www-form-urlencoded">
+{{#if lists.id }}<input name="id" value="{{lists.id}}">{{/if}}
+  <div class="mb-3">
+    <label for="name" class="form-label">List Name</label>
+    <input name="name" type="text" class="form-control" id="name" {{#if lists.name }}value="{{lists.name}}{{/if}}">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input name="description" type="text" class="form-control" id="description" {{#if lists.description }}value="{{lists.description}}{{/if}}">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

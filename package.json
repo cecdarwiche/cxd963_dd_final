@@ -1,0 +1,29 @@
+{
+  "name": "cxd963_dd_final",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cecdarwiche/cxd963_dd_final.git"
+  },
+  "author": "Cecile Darwiche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cecdarwiche/cxd963_dd_final/issues"
+  },
+  "homepage": "https://github.com/cecdarwiche/cxd963_dd_final#readme",
+  "description": "",
+  "dependencies": {
+    "dayjs": "^1.11.13",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.1",
+    "multer": "^1.4.5-lts.2",
+    "sequelize": "^6.37.7",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

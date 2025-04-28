@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="row">
+{{#each lists}}
+<div class="col-md-4 mb-4 px-2">
+<div class="card" style="width: 18rem;">
+  <div class="card-header text-dark">
+    {{this.dataValues.listName}}
+  </div>
+  <ul class="list-group list-group-flush">
+    {{#each this.Tasks}}
+    <li class="list-group-item">{{this.dataValues.item}}</li>
+    {{/each}}
+  </ul>
+</div>
+</div>
+{{/each}}
+
+</div>
+</div>
